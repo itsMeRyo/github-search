@@ -20,6 +20,7 @@ const App: React.FC = () => {
   const {
     users,
     selectedUser,
+    isUserNotFound,
     repositories,
     loading,
     error,
@@ -52,6 +53,7 @@ const App: React.FC = () => {
             className="w-full"
             value={activeAccordionItem}
             onValueChange={setActiveAccordionItem}
+            data-testid="user-list"
           >
             {users.map((user) => (
               <AccordionItem value={`item-${user?.id}`} key={user?.id} className="border-b border-gray-200 last:border-b-0">
@@ -78,6 +80,8 @@ const App: React.FC = () => {
             ))}
           </Accordion>
         )}
+        {!loading && !error && isUserNotFound && (
+          <p className="text-gray-600 text-center p-4">No user found.</p>)}
       </div>
     </div>
   );

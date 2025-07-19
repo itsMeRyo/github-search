@@ -7,6 +7,8 @@ import { githubService } from "@/services/github";
 interface UseGithubSearch {
   users: GitHubUser[];
   selectedUser: GitHubUser | null;
+  isUserNotFound: boolean;
+  setIsUserNotFound: (value: boolean) => void;
   repositories: GitHubRepo[];
   loading: boolean;
   error: string | null;
@@ -18,6 +20,7 @@ interface UseGithubSearch {
 
 export const useGithubSearch = (): UseGithubSearch => {
   const [users, setUsers] = useState<GitHubUser[]>([]);
+  const [isUserNotFound, setIsUserNotFound] = useState<boolean>(false);
   const [selectedUser, setSelectedUser] = useState<GitHubUser | null>(null);
   const [repositories, setRepositories] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -36,6 +39,7 @@ export const useGithubSearch = (): UseGithubSearch => {
     try {
       const items = await githubService.searchUsers(query);
       setUsers(items);
+      setIsUserNotFound(items?.length < 1);
       setSelectedUser(null);
       setRepositories([]);
       setActiveAccordionItem("");
@@ -88,6 +92,8 @@ export const useGithubSearch = (): UseGithubSearch => {
   return {
     users,
     selectedUser,
+    isUserNotFound,
+    setIsUserNotFound,
     repositories,
     loading,
     error,
