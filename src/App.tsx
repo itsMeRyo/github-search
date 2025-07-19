@@ -40,7 +40,7 @@ const App: React.FC = () => {
           isLoading={loading}
         />
 
-        {loading && <LoadingIndicator />}
+        {loading && !users && <LoadingIndicator />}
         {error && (
           <ErrorIndicator error={error} />
         )}
