@@ -8,9 +8,9 @@ interface RepositoryListProps {
 
 const RepositoryList: React.FC<RepositoryListProps> = ({ repositories }) => {
     return (
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4" data-testid="repository-list">
             {repositories.map((repo) => (
-                <Card key={repo.id} className="bg-gray-200 p-4 rounded-lg shadow-sm flex sm:flex-row sm:justify-between sm:items-start">
+                <Card key={repo.id} className="bg-gray-200 p-4 rounded-lg shadow-sm flex sm:flex-row sm:justify-between sm:items-start" data-testid={`repository-${repo.id}`}>
                     <CardHeader className="p-0 sm:mb-0 sm:w-3/4">
                         <CardTitle className="text-lg font-semibold text-gray-800 break-all">
                             <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="hover:underline">

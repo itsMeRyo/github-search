@@ -17,9 +17,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
 }) => {
     return (
         <div className="mb-6">
-            <Label htmlFor="user-search" className="sr-only">Search GitHub Users</Label>
+            <Label htmlFor="search-input" className="sr-only">Search GitHub Users</Label>
             <Input
-                id="user-search"
+                id="search-input"
+                data-testid="search-input"
                 type="text"
                 placeholder="Enter username"
                 value={searchTerm}
@@ -34,7 +35,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
             <Button
                 onClick={onSearch}
                 className="w-full mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-200"
-                disabled={isLoading}
+                disabled={isLoading || !searchTerm}
+                data-testid="search-button"
             >
                 Search
             </Button>
