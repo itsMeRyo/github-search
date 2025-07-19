@@ -54,8 +54,9 @@ const App: React.FC = () => {
             data-testid="user-list"
           >
             {users.map((user, index) => (
-              <AccordionItem value={`item-${user?.id}`} key={user?.id} data-testid={`user-${index + 1}`} className="border-b border-gray-200 last:border-b-0">
+              <AccordionItem value={`item-${user?.id}`} key={user?.id} className="border-b border-gray-200 last:border-b-0">
                 <AccordionTrigger
+                  data-testid={`user-${index + 1}`}
                   onClick={() => handleUserSelect(user)}
                   className="flex items-center justify-between p-3 hover:bg-blue-50 cursor-pointer transition duration-150 ease-in-out"
                 >
