@@ -8,8 +8,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import ErrorIndicator from '@/components/Error';
-import LoadingIndicator from '@/components/Loading';
+import ErrorIndicator from '@/components/common/Error';
+import LoadingIndicator from '@/components/common/Loading';
 import SearchBar from '@/components/GithubSearch/SearchBar';
 import RepositoryList from '@/components/GithubSearch/RepositoryList';
 
