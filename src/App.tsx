@@ -80,7 +80,7 @@ const App: React.FC = () => {
           </Accordion>
         )}
         {!loading && !error && isUserNotFound && (
-          <p className="text-gray-600 text-center p-4">No user found.</p>)}
+          <p data-testid='no-users' className="text-gray-600 text-center p-4">No users found.</p>)}
       </div>
     </div>
   );
