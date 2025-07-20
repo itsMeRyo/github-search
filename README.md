@@ -1,49 +1,86 @@
-# Getting Started with Create React App
+# GitHub User & Repository Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app helps you quickly find GitHub users and explore their public projects.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Check out the app in action: <https://ryo-github-search.vercel.app/>
 
-### `npm start`
+## What it Does
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Find Users:** Search for GitHub usernames.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Smart Search:** It waits a moment after you type to avoid too many API calls.
 
-### `npm test`
+- **See Results:** Shows a list of users with their profile pictures.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **View Repos:** Click on a user to see their public repositories, including details like stars and forks.
 
-### `npm run build`
+- **Clear Feedback:** You'll see "Loading..." messages and clear error alerts if something goes wrong.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Works Everywhere:** Looks good on phones, tablets, and desktops.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Get Started Locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Want to run it on your computer?
 
-### `npm run eject`
+### You'll Need
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- pnpm (If you don't have it: `npm install -g pnpm`)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1.  **Grab the code:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ```bash
+    git clone https://github.com/itsMeRyo/github-search github-search
+    cd github-search
+    ```
 
-## Learn More
+2.  **Install everything:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    pnpm install
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# github-search
-# github-search
-# github-search
+### Run the App
+
+```bash
+pnpm start
+```
+
+Open your browser to `http://localhost:3000`.
+
+## Testing
+
+I use Cypress to make sure things are working.
+
+### How to Run Tests
+
+1.  **Install Cypress:**
+
+    ```bash
+    pnpm add cypress --save-dev
+    ```
+
+2.  **Start Cypress:**
+
+    ```bash
+    npx cypress open
+    ```
+
+3.  Choose **"E2E Testing"** in the Cypress window.
+
+4.  Select a browser (e.g., Chrome, Electron) to run your tests in.
+
+5.  Pick a test file (e.g., `positive.cy.tsx` or `negative.cy.tsx`) to run it.
+
+### About the Tests
+
+- **`cypress/fixtures/positive.json`**: Provides mocked API responses for successful (positive) test scenarios.
+
+- **`cypress/fixtures/negative.json`**: Provides mocked API responses for unsuccessful (negative) test scenarios.
+
+- **`cypress/e2e/positive.cy.`**: Contains E2E tests for successful user search and repository display.
+
+- **`cypress/e2e/negative.cy.`**: Contains E2E tests for error handling and no-results scenarios.
