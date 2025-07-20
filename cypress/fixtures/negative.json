@@ -1,0 +1,28 @@
+{
+  "total_count": 1,
+  "incomplete_results": false,
+  "items": [
+    {
+      "login": "norepouser",
+      "id": 166917028,
+      "node_id": "U_kgDOCfLzpA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/166917028?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/norepouser",
+      "html_url": "https://github.com/norepouser",
+      "followers_url": "https://api.github.com/users/norepouser/followers",
+      "following_url": "https://api.github.com/users/norepouser/following{/other_user}",
+      "gists_url": "https://api.github.com/users/norepouser/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/norepouser/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/norepouser/subscriptions",
+      "organizations_url": "https://api.github.com/users/norepouser/orgs",
+      "repos_url": "https://api.github.com/users/norepouser/repos",
+      "events_url": "https://api.github.com/users/norepouser/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/norepouser/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false,
+      "score": 1
+    }
+  ]
+}

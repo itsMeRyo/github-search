@@ -69,7 +69,7 @@ const App: React.FC = () => {
                     {loading && <LoadingIndicator message="Loading repositories..." />}
                     {error && <p className="text-center text-red-700">{error}</p>}
                     {!loading && !error && repositories.length === 0 ? (
-                      <p className="text-gray-600 text-center p-4">No public repositories found for this user.</p>
+                      <p data-testid='no-repo' className="text-gray-600 text-center p-4">No public repositories found for this user.</p>
                     ) : (
                       <RepositoryList repositories={repositories} />
                     )}
